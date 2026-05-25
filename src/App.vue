@@ -4,6 +4,7 @@ import NoteHeader from './components/NoteHeader.vue'
 import NoteList from './components/NoteList.vue'
 import NoteStats from './components/NoteStats.vue'
 
+
 // 记事本数据
 const notes=ref([])
 
@@ -138,7 +139,7 @@ onMounted(loadNote)
 <template>
   <!-- 外层圆形边框 -->
   <div class="app-ring">
-    <svg class="progress-ring" width="500" height="500" view-box="0 0 500 500">
+    <svg class="progress-ring" width="500" height="500" viewBox="0 0 500 500">
       <!-- 背景灰色圆环 -->
        <!-- cx="140"、cy="140" 表示圆心在 (140,140) -->
       <circle
@@ -191,6 +192,10 @@ onMounted(loadNote)
 </template>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
+
 .app-ring {
   position: relative;
   width: 100%;
@@ -221,7 +226,7 @@ onMounted(loadNote)
   max-width: 700px;
   max-height: 500px;
   border-radius: 32px;
-  padding: 24px 20px;
+  padding: 24px 30px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   box-sizing: border-box;
   border: 1px solid rgb(245, 194, 122);
@@ -231,5 +236,22 @@ h1 {
   text-align: center;
   color: brown;
 }
+
+/* ========= 响应式修复 ========= */
+@media (max-width: 600px) {
+  #todo {
+    max-height: 400px;
+
+  }
+  .note-list{
+    height: 150px;
+  }
+  #todo h1{
+    white-space: nowrap;
+    font-size: clamp(20px, 7vw, 24px);
+  }
+}
+
+
 
 </style>

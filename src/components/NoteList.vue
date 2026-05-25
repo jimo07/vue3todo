@@ -28,8 +28,7 @@ const handleUpdate=(id,text)=>emit('update',id,text)
 </template>
 <style scoped>
 .note-list{
-    height: 200px;
+    height: 210px;
     overflow: scroll;
-    margin-bottom: 20px;
 }
 </style>

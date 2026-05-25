@@ -78,10 +78,15 @@ const handleMode=(type)=>{
     display: flex;
     justify-content: center;
 }
-.input-wrapper input{
-    width: 400px;
+.input-wrapper{
+    width: 100%;
+    max-width: 400px;
     height: 35px;
-    font-size: 18px;
+}
+.input-wrapper input{
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
     padding-left: 10px;
     box-sizing: border-box;
     border: 1px solid rgb(220, 220, 220);

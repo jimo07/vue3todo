@@ -40,11 +40,12 @@ const handleFilter=(type)=>emit('filter',type)
 .note-filter{
     display: flex;
     justify-content: center;
-    color: brown;
+    margin-top: 20px;
 }
 .note-under{
     display: flex;
     justify-content: center;
+    align-items: center;
     letter-spacing: 1px;
     gap: 10px;
     font-size: 13px;
@@ -56,6 +57,8 @@ const handleFilter=(type)=>emit('filter',type)
     border: none;
     color: rgb(148, 149, 150);
     cursor: pointer;
+    font-weight: 100;
+    font-size: 15px;
 }
 
 </style>

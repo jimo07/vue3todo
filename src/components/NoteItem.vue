@@ -69,7 +69,7 @@ const handleToggle=()=>emit('toggle',props.note.id)
         @blur="saveEdit" 
         @keydown="onKeydown"  
         ></input>
-        <el-button type="danger" circle size="small" @click="handleDelete">X</el-button>     
+        <el-button type="danger" circle size="small" @click="handleDelete" class="delete">X</el-button>     
     </div>
 </template>
 <style scoped>
@@ -77,23 +77,20 @@ const handleToggle=()=>emit('toggle',props.note.id)
     position: relative;
     background-color: #fff;
     border: 1px solid rgb(220, 220, 220);
-    width: 400px;
+    max-width: 400px;
     margin: 0px auto;
     border-collapse: collapse;
     height: 30px;
     padding-left: 20px;
     box-sizing: border-box;
 }
-span,input{
-    font-size: 20px;
-    line-height: 30px;
+.note-item span,
+.note-item input{
+    font-size: 16px;
     margin-left: 10px;
+    
 }
-input{
-    display: inline-block;
-    height: 20px;
-    font-size: 18px;
-}
+
 input:focus{
     outline: none;
 }
@@ -107,11 +104,16 @@ input:focus{
     border: none;
     color: rgb(121, 120, 120);
     right: 10px;
-    line-height: 30px;
+    line-height: 20px;
 }
 .note-item:hover :deep(.el-button){
     display: inline-block;
     cursor: pointer;
+}
+@media (max-width: 600px){
+    .note-item :deep(.el-button){
+        display: inline-block;
+    }
 }
 
 </style>
